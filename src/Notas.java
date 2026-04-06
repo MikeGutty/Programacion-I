@@ -5,7 +5,7 @@ public class Notas {
         // Declarando variables
         String nombre, calificacion;
         float nota1, nota2, nota3, nota4, nota5, promedio;
-        int menu;
+        int opcion = 0;
         // float[] notas = new float[5];
         Scanner input = new Scanner(System.in);
 
@@ -43,35 +43,41 @@ public class Notas {
             calificacion = "(F)";
         }
 
-        System.out.println("Seleccione una opcion del menu");
-        System.out.println("1. Mostrar mensaje personalizado");
-        System.out.println("2. Mostrar si aprobo o no");
-        System.out.println("3. Mostrar lista de notas");
-        System.out.println("4. Salir");
+        while (opcion != 4) {
 
-        menu = input.nextInt();
+            System.out.println("Seleccione una opcion del menu");
+            System.out.println("1. Mostrar mensaje personalizado");
+            System.out.println("2. Mostrar si aprobo o no");
+            System.out.println("3. Mostrar lista de notas");
+            System.out.println("4. Salir");
 
-        switch (menu) {
-            case 1:
-                System.out.println("Felicidades " + nombre + " ,obtuviste " + calificacion);
-                break;
-            case 2:
-                if (promedio >= 61) {
-                    System.out.println("Felicidades, aprobaste");
-                } else {
-                    System.out.println("Malas noticias, no aprobaste");
-                }
-                break;
-            case 3:
-                System.out.println("Tu nota 1 es: " + nota1);
-                System.out.println("Tu nota 2 es: " + nota2);
-                System.out.println("Tu nota 3 es: " + nota3);
-                System.out.println("Tu nota 4 es: " + nota4);
-                System.out.println("Tu nota 5 es: " + nota5);
-                break;
-            case 4:
-                System.out.println("Hasta luego");
-                break;
+            opcion = input.nextInt();
+
+            switch (opcion) {
+                case 1:
+                    System.out.println("Felicidades " + nombre + " ,obtuviste " + calificacion);
+                    break;
+                case 2:
+                    if (promedio >= 61) {
+                        System.out.println("Felicidades, aprobaste");
+                    } else {
+                        System.out.println("Malas noticias, no aprobaste");
+                    }
+                    break;
+                case 3:
+                    System.out.println("Tu nota 1 es: " + nota1);
+                    System.out.println("Tu nota 2 es: " + nota2);
+                    System.out.println("Tu nota 3 es: " + nota3);
+                    System.out.println("Tu nota 4 es: " + nota4);
+                    System.out.println("Tu nota 5 es: " + nota5);
+                    break;
+                case 4:
+                    System.out.println("Hasta luego");
+                    break;
+                default:
+                    System.out.println("Escoja una opcion correcta");
+                    break;
+            }
         }
     }
 }
