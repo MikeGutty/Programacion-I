@@ -4,30 +4,37 @@ public class Notas {
     public static void main(String[] args) {
         // Declarando variables
         String nombre, calificacion;
-        float nota1, nota2, nota3, nota4, nota5, promedio;
-        int opcion = 0;
+        float nota1 = 0, nota2 = 0, nota3 = 0, nota4 = 0, nota5 = 0, sumaNotas = 0, promedio;
+        int opcion;
         // float[] notas = new float[5];
         Scanner input = new Scanner(System.in);
 
         System.out.print("Ingrese su nombre: ");
         nombre = input.nextLine();
 
-        System.out.print("Ingrese su nota 1 (0 - 100): ");
-        nota1 = input.nextFloat();
-
-        System.out.print("Ingrese su nota 2 (0 - 100): ");
-        nota2 = input.nextFloat();
-
-        System.out.print("Ingrese su nota 3: (0 - 100): ");
-        nota3 = input.nextFloat();
-
-        System.out.print("Ingrese su nota 4: (0 - 100): ");
-        nota4 = input.nextFloat();
-
-        System.out.print("Ingrese su nota 5: (0 - 100): ");
-        nota5 = input.nextFloat();
-
-        promedio = (nota1 + nota2 + nota3 + nota4 + nota5)/5;
+        for (int i = 1; i <= 5; i++) {
+            System.out.print("Ingrese su nota"  + i + "(0 - 100): ");
+            float nota = input.nextFloat();
+            switch (i) {
+                case 1:
+                    nota1 = nota;
+                    break;
+                case 2:
+                    nota2 = nota;
+                    break;
+                case 3:
+                    nota3 = nota;
+                    break;
+                case 4:
+                    nota4 = nota;
+                    break;
+                case 5:
+                    nota5 = nota;
+                    break;
+            }
+            sumaNotas += nota;
+        }
+        promedio = sumaNotas/5;
 
         if (promedio >= 90) {
             calificacion = "(A)";
@@ -43,7 +50,7 @@ public class Notas {
             calificacion = "(F)";
         }
 
-        while (opcion != 4) {
+        do {
 
             System.out.println("Seleccione una opcion del menu");
             System.out.println("1. Mostrar mensaje personalizado");
@@ -78,6 +85,6 @@ public class Notas {
                     System.out.println("Escoja una opcion correcta");
                     break;
             }
-        }
+        } while (opcion != 4);
     }
 }

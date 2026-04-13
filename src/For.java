@@ -9,7 +9,7 @@ public class For {
         System.out.print("Ingrese el numero: ");
         numero = sc.nextInt();
 
-        for (int i = 0; i <= 12; i++) {
+        for (int i = 1; i <= 12; i++) {
             System.out.println(numero + " x " + i + " = " + (numero * i));
         }
     }
