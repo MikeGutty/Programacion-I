@@ -16,6 +16,14 @@ public class Funciones {
         return numero % 2 == 0;
     }
 
+    static float perimetroTriangulo(float lado1, float lado2, float lado3) {
+        return lado1 + lado2 + lado3;
+    }
+
+    static float areaTriangulo(float base, float altura) {
+       return (base * altura)/2;
+    }
+
     public static void main(String[] args) {
         saludar();
         saludar("Juan");
