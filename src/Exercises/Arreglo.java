@@ -7,10 +7,10 @@ public class Arreglo {
         Scanner sc = new Scanner(System.in);
         int[] numeros = new int[5];
         int sumatoria = 0;
-        int promedio = 0;
-        int maximo = 0;
-        int minimo = 0;
-        int numeroBusqueda = 0;
+        int promedio;
+        int maximo;
+        int minimo;
+        int numeroBusqueda;
         boolean bandera = false;
 
         // Sirve para guardar los datos
